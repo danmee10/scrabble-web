@@ -17,7 +17,7 @@ describe "the basic scoring of a word" do
       end
     end
 
-    xit "does not score a blank input" do
+    it "does not score a blank input" do
       visit '/words'
       fill_in 'word[word]', :with => ""
       click_link_or_button 'Score Word'
@@ -27,7 +27,7 @@ describe "the basic scoring of a word" do
       end
     end
 
-    xit "rejects words with non-letter characters" do
+    it "rejects words with non-letter characters" do
       ['two words', 'exclaim!', '37numbers'].each do |word|
         visit '/words'
         fill_in 'word[word]', :with => word
@@ -50,7 +50,7 @@ describe "the basic scoring of a word" do
         end
       end
 
-      xit "displays the last three words along with their scores" do
+      it "displays the last three words along with their scores" do
         within("#previous_words") do
           sample_words.each do |word, score|
             expect(page).to have_content(word)

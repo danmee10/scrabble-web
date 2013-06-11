@@ -10,7 +10,8 @@ class WordsController < ApplicationController
     if @new_word.save
       redirect_to "/words"
     else
-      raise boom
+      flash[:notice] = "Sorry, please enter a single word made up of only letters"
+      redirect_to '/words'
     end
   end
 end
