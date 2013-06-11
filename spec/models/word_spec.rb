@@ -6,7 +6,7 @@ describe Word do
       expect(Word.new(:word => "hi")).to be_valid
     end
 
-    xit "is not valid without a word" do
+    it "is not valid without a word" do
       expect(Word.new).to_not be_valid
     end
 
