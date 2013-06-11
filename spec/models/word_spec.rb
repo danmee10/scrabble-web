@@ -16,6 +16,9 @@ describe Word do
   end
 
   describe '.compute_score' do
-    it "scores hello as 8"
+    it "scores hello as 8" do
+      word = Word.new(:word => "hello")
+      expect(word.compute_score).to eq 8
+    end
   end
 end
